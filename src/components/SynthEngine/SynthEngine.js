@@ -29,6 +29,14 @@ class SynthEngine extends React.Component {
     this.setAudioContext();
   }
 
+  componentWillUnmount() {
+    this.stopOscillator();
+  }
+
+  stopOscillator(){
+    this.oscillator.stop();
+  }
+
   toggleOscillator({on}){
     if(on) {
       this.oscillator.connect(this.audioContext.destination);
