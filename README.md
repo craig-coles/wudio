@@ -3,6 +3,10 @@
 An exercise in creating a react / babel / koa / webpack app from scratch
 
 ## Blog
+***July 13, 2018***
+
+Refactored architecture so that all synth engine methods are called in the synth engine context. I had accidentally passed around the context and it was calling the synth engine by passing itself into it's own method ... really weird, but ran in to an issue and this was the hacky solution at the time. This refactor makes it much simpler. I also added a way to toggle the oscillator off and on through a button control, and it now `stops` the oscillator when user navigates away. I was getting this cool (but accidental) dual oscillator happening (this also caused a memory leak).
+
 ***July 12, 2018***
 
 Solved routing the audio context through the controller components and back to the synth engine. First method was to use render functions to pass the `audioContext` around, which is nice but starts to get messy after only 2 levels of nesting. For the Second method I refactored the render props to use the new `ReactContext API` and it really cleaned up the code and the readability. The `React Context API` is currently in a branch called `with-context-api`. I am going to merge it into `master` soon, as I definatley prefer the `React Context API`  over `render props`.
