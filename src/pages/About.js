@@ -14,16 +14,16 @@ function About(){
           <PrimaryButton909 />
           <KnobPlate909>
             {
-              (state, knobOutput, synthContext) => (
-                <Knob909 values={state} output={knobOutput} control="envelope" synthContext={synthContext}/>
+              (state, synthContext) => (
+                <Knob909 values={state} control="frequency" synthContext={synthContext}/>
               )
             }
           </KnobPlate909>
 
           <KnobPlate909>
             {
-              (state, knobOutput, synthContext) => (
-                <Knob909 values={state} output={knobOutput} control="envelope" synthContext={synthContext}/>
+              (state, synthContext) => (
+                <Knob909 values={state} control="detune" synthContext={synthContext}/>
               )
             }
           </KnobPlate909>

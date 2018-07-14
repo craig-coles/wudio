@@ -39,10 +39,10 @@ class KnobPlate909 extends React.Component {
   render(){
     return (
       <SynthContext.Consumer>
-        {({synthContext, knobOutput}) => (
+        {({synthContext}) => (
             <KnobPlate909Styled onMouseMove={this.mouseMove.bind(this)}>
               {this.getKnobLevelPlateMarks(11)}
-              {this.props.children(this.state, knobOutput, synthContext)}
+              {this.props.children(this.state, synthContext)}
             </KnobPlate909Styled>
           )
         }
